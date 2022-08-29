@@ -1,23 +1,23 @@
-{{--@extends('components.layout')--}}
-{{--@section('Contion')--}}
-<x-layout >
-{{--    <#?php foreach($posts as $post): ?>--}}
-        @foreach($posts as $post)
-{{--             Blade Code--}}
 
-{{--            <article style="{{$loop->even?:'background-color: #e1ca47 ;padding: 5px; border: 1px solid black;',''}}">--}}
+
+<x-layout >
+        @foreach($posts as $post)
+
             <article>
-                <h1><a href="Posts_Group/{{$post->slug}}">
-{{--                                <#?=$post->title;?>--}}
+                <h1><a href="Post/{{$post->slug}}">
                         {{ $post->title  }}
-                    </a></h1>
+                    </a>
+                </h1>
+                <span style="font-size: 20px">
+                   <a href="/category/{{$post->category->name}}" > {{$post->category->name}}</a>
+                </span>
+                <span style="font-size: 20px ;margin: 5px; ">
+                   <a href="/user/{{$post->user->id}}" style="color: cornflowerblue" >
+                       {{$post->user->name}}</a>
+                </span>
                 <p>
-{{--                            <#?=$post->excert;?>  PHP Code --}}
-                    {{$post->excert}}
+                    {{$post->excerpt}}
                 </p>
             </article>
         @endforeach
-{{--    <#?php endforeach ;?>--}}
 </x-layout>
-
-

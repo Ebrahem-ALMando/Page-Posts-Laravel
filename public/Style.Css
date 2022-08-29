@@ -19,3 +19,7 @@ h1 a {
     color: rgb(159, 56, 159);
     text-decoration: none;
 }
+span a{
+    text-decoration: none;
+    color: #732979;
+}
