@@ -12,8 +12,8 @@
                    <a href="/category/{{$post->category->name}}" > {{$post->category->name}}</a>
                 </span>
                 <span style="font-size: 20px ;margin: 5px; ">
-                   <a href="/user/{{$post->user->id}}" style="color: cornflowerblue" >
-                       {{$post->user->name}}</a>
+                   <a href="/user/{{$post->auther->id}}" style="color: cornflowerblue" >
+                       {{$post->auther->name}}</a>
                 </span>
                 <p>
                     {{$post->excerpt}}

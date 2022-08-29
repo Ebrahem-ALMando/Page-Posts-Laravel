@@ -19,8 +19,8 @@ public  function category()
 {
     return $this->belongsTo(category::class);
 }
-public  function  user()
+public  function  auther()
 {
-    return $this->belongsTo(User::class);
+    return $this->belongsTo(User::class,'user_id');
 }
 }

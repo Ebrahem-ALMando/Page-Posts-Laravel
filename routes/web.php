@@ -21,7 +21,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::get('/', function(){
 
-    $post=Post::with('category','user')->get();
+    $post=Post:: latest ()->with('category','auther')->get();
     return view('Posts',[
         'posts'=>$post
     ]);
@@ -44,8 +44,6 @@ Route::get('/Post/{post}', function(Post $post){
         ]);
 });
 //})->where('slug','[A-z_\-]+');
-
-
 
 Route::get('/Add',function (){
     Post::create([
