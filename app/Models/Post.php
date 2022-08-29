@@ -19,7 +19,7 @@ public  function category()
 {
     return $this->belongsTo(category::class);
 }
-public  function  auther()
+public  function  author()
 {
     return $this->belongsTo(User::class,'user_id');
 }
