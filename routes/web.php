@@ -27,15 +27,19 @@ Route::get('/',[Postcontroller::class,'index']);
 Route::resource('/Posts',Postcontroller::class)->only(
     'show','create','edit','update','destroy','store');
 //Single Post ==================>>>>>>>>>
-
 Route::get('/Post/{post}', [Postcontroller::class,'show']);
 
-Route::get('category',[categorycontroller::class,'index']);
 Route::resource('/Category',categorycontroller::class);
+
 Route::get('user/{user}',function (User $user){
-   return view('Posts',[
-       'posts'=>$user->Post
+   return view('Posts.index',[
+       'posts'=>$user->Post->load('category','author')
    ]) ;
+});
+Route::get('/category/{category:slug}',function (category $category){
+    return view('Posts.index',[
+        'posts'=>$category->posts->load('category','author')
+    ]) ;
 });
 //})->where('slug','[A-z_\-]+');
 

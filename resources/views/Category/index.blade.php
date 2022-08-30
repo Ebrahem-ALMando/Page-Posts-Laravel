@@ -1,6 +1,4 @@
 <x-layout>
-
-
     <div class="row mb-2">
         <div class="col-lg-12">
        <a class="btn btn-success" href="{{route('Category.create')}}">
@@ -27,15 +25,14 @@
         <tr>
 
         <td>
-              {{$category->name}}
+             <h5>  {{$category->name}}</h5>
         </td>
             <td>
-                {{$category->slug}}
+                <h5>{{$category->slug}}</h5>
 
             </td>
             <td>
-                <form action="{{route('Category.edit',$category->id)}}" method="post">
-
+                <form action="{{route('Category.edit',$category->id)}}" method="GET">
                 <button type="submit" class="btn btn-primary btn-sm">
                          Update
                 </button> </form>

@@ -25,7 +25,6 @@ class categorycontroller extends Controller
 
     public function store(Request $request)
     {
-//      return $request->post();
     $request->validate([
        'name'=>'required|min:3',
         'slug'=>'required|min:3'
@@ -37,9 +36,10 @@ class categorycontroller extends Controller
 
     public function show(category $category)
     {
-        return view('Posts.index',[
-            'posts'=>$category->posts
-        ]);    }
+//        return view('Posts.index',[
+//            'posts'=>$category->posts
+//        ]);
+     }
 
     /**
      * Show the form for editing the specified resource.
